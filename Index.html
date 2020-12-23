@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: Verdana;
+        }
+.game_body {
+    height: 1000px;
+    width: 100%;
+}
+.game_name{
+    width: 500px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 30px;
+    animation: color 2s infinite;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+.game {
+    border: 25px solid tomato;
+    border-radius: 30px;
+    padding: 50px;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    background: black;
+}
+.game_display {
+    margin: auto;
+    padding: 20px;
+    background: #5088e8;
+    height: 250px;
+    width: 95%;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    box-shadow: 0px 0px 50px #3457ed;
+}
+.score_bord{
+    height: 250px;
+    width: 95%;
+    padding-top: 20px;
+    background: blue;
+    margin: auto;
+    box-shadow: 0px 0px 50px #3457ed;
+}
+.right,.wrong,.score,.total,.rate{
+    width: auto;
+    color: #ffffff;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+.game_input {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    
+}
+.game_input input {
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-bottom: 5px solid #54ff00;
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #080959;
+    box-shadow: 0px 0px 50px #3457ed;
+}
+.button_normal {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    width: 25%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    background: #e85130;
+    color: black;
+    font-weight: bold;
+    box-shadow: 5px 5px 50px black;
+    
+}
+.button_click{
+    background: black;
+    color: #ffffff;
+    box-shadow: 0px 0px 50px #3457ed;
+    border: none;
+    outline: none;
+}
+@keyframes color{
+    0%{
+        background: #f7350b;
+    }
+    50%{
+        background: blue;
+        color: red;
+    }
+    100%{
+        background: #f7350b;
+    }
+}
+        </style>
+        
+    </head>
+    <body>
+        
+<section class="game_body">
+    <div class="game_name">
+        Gassing Game
+    </div>
+    
+    <div class="comment" style="margin-bottom:50px;font-size:30px;font-weight:bold;text-align:center;"></div>
+    <div class="game">
+        <div class="game_display">
+        </div>
+        
+        <div class="score_bord">
+            <div class="right"></div>
+            <div class="score"></div>
+            <div class="wrong"></div>
+            <div class="total"></div>
+            <div class="rate"></div>
+        </div>
+        
+        <div class="game_input">
+            <input class="input1" value="" placeholder="Enter number" type="number">
+            <button class="button_normal" onclick="style_button()">Enter</button>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    
+    var input1=document.querySelector(".input1").value;
+        
+var r=0;
+var s=0;
+var w=0;
+var total;
+var rate;
+var r=
+alert(random);
+
+function style_button (){
+    document.querySelector(".button_normal").classList.add("button_click");
+    var input1=document.querySelector(".input1").value;
+    var random=Math.floor(Math.random() * 10);
+    if(input1==""){
+        alert("Please enter any number between 0 to 10");
+        
+    }
+
+        
+       else if(random==input1){
+            r++;
+            s++;
+            total=r+w;
+            rate=(r/total)*100;
+            
+            
+            document.querySelector(".game_display").innerHTML="Correct <br> Your number is : "+input1+"<br> Random number is : "+random;
+            
+            
+            document.querySelector(".right").innerHTML="Right answer is : "+r;
+        
+        document.querySelector(".score").innerHTML="Score is : "+s;
+        
+        document.querySelector(".wrong").innerHTML="Wrong answer is : "+w;
+        game_display.querySelector(".total").innerHTML="Total : "+total;
+        document.querySelector(".rate").innerHTML="Success rate : "+rate;
+        }
+        
+        else{
+            w++;
+            total=r+w;
+            rate=(r/total)*100;
+            
+            document.querySelector(".game_display").innerHTML="<b style='color: red;'>Wrong<b/> <br> Your number is : "+input1+"<br> The random number is : "+random;
+            
+            document.querySelector(".right").innerHTML="Right answer is : "+r;
+        
+        document.querySelector(".score").innerHTML="Score is : "+s;
+        
+        document.querySelector(".wrong").innerHTML="Wrong answer is : "+w;
+        document.querySelector(".total").innerHTML="Total : "+total;
+        document.querySelector(".rate").innerHTML="Success rate : "+rate;
+        }
+    
+}
+// link : https://joyroy-bd.github.io/gassing-game/
+    
+    
+</script>
+
+    </body>
+</html>
